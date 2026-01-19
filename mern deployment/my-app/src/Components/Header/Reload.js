@@ -10,7 +10,8 @@ export default function Reload() {
     dispatch(set_loading(true));
 
     try{
-      const res = await fetch('http://localhost:3000/load_all/')
+      // const res = await fetch('http://localhost:3000/load_all/')
+      const res = await fetch('http://127.0.0.1:8000/load_all/') // python
       const data = await res.json();
       dispatch(reload_books(data.data));
     } catch (err) {
