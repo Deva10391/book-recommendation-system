@@ -3,7 +3,7 @@ import cors from 'cors';
 import { load_all, recommend } from './prediction/aiml_handler.js';
 
 const app = express()
-const port = 3000
+const port = 3001
 
 const corsOperations = {
   origin: '*',

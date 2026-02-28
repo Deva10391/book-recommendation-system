@@ -16,6 +16,15 @@ export const bookSlice = createSlice({
   },
 })
 
+export const apiSlice = createSlice({
+  name: 'apis',
+  initialState: {
+    // port: 'http://localhost:3001',
+    port: 'http://127.0.0.1:8000', // python
+  }
+})
+
 export const { reload_books, set_loading } = bookSlice.actions
 
-export default bookSlice.reducer
+export const booksReducer = bookSlice.reducer
+export const apiReducer = apiSlice.reducer

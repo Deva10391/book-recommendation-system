@@ -1,15 +1,15 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { reload_books, set_loading } from "../Redux/Slice";
 
 export default function BookComp({book}) {
+  const port = useSelector((state) => state.api.port)
   const dispatch = useDispatch();
   // console.log(book);
 
   const fetchBooks = async (title) => {
     try {
       dispatch(set_loading(true));
-      // const res = await fetch('http://localhost:3000/recommend/', {
-      const res = await fetch('http://127.0.0.1:8000/recommend/', { // python
+      const res = await fetch(`${port}/recommend/`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({title}),
