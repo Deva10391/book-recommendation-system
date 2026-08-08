@@ -19,7 +19,7 @@ export const bookSlice = createSlice({
 export const apiSlice = createSlice({
   name: 'apis',
   initialState: {
-    // port: 'http://localhost:3001',
+    // port: 'http://localhost:3001', // node
     port: 'http://127.0.0.1:8000', // python
   }
 })

@@ -1,0 +1,20 @@
+{
+  "name": "mern-deployment",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "npm --prefix my-app start"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001809",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.0",
+    "nodemon": "^3.1.10"
+  }
+}
