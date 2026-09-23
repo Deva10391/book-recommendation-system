@@ -4,7 +4,6 @@ import BookComp from "./BookComp";
 export default function ShowBooks() {
   const books = useSelector((state) => state.books.books);
   const loading = useSelector((state) => state.books.loading);
-  console.log(books);
 
   return (
     <div

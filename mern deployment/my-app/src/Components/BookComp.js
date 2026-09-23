@@ -4,7 +4,6 @@ import { reload_books, set_loading } from "../Redux/Slice";
 export default function BookComp({book}) {
   const port = useSelector((state) => state.api.port)
   const dispatch = useDispatch();
-  // console.log(book);
 
   const fetchBooks = async (title) => {
     try {

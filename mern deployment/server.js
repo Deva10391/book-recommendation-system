@@ -23,7 +23,6 @@ app.post('/recommend/', async (req, res) => {
   const title = req.body.title;
   try {
     const recs = await recommend(title)//.catch(err => console.error(`here' ${err}`));
-    console.log(recs);
     res.status(200).json({data: recs});
   } catch (err) {
     console.error(err);

@@ -39,7 +39,15 @@ Every book is placed on a "map" based on its author and year. Similar books land
 
 ## 5. Setup Process
 
-**Backend**
+**mern-stack**
+
+   ```bash
+   npm run dev
+   ```
+
+or
+
+**fastapi**
 
 1. Install the required Python libraries:
 
@@ -54,17 +62,21 @@ Every book is placed on a "map" based on its author and year. Similar books land
 4. Start the API:
 
    ```bash
+   cd "mern deployment"
    uvicorn python_server:app --reload
    ```
 
    The FastAPI backend runs on `http://127.0.0.1:8000`.
 
-**Frontend**
 
-1. `cd my-app`
-2. `npm install`
-3. `npm start` — runs on `localhost:3000`, calls the FastAPI backend for recommendations.
-4. In `my-app/src/Redux/Slice.js`, comment out the Node backend port and uncomment/use the Python FastAPI port (`8000`).
+   ```bash
+   cd "mern deployment/my-app"
+   npm install
+   npm start
+   ```
+   it runs on `localhost:3000`, calls the FastAPI backend for recommendations.
+
+   In `my-app/src/Redux/Slice.js`, comment out the Node backend port and uncomment/use the Python FastAPI port (`8000`).
 
 **Production**
 

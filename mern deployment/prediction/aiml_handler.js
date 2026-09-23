@@ -2,7 +2,7 @@ import fs from 'fs';
 import { spawn } from 'child_process';
 
 export function load_all () {
-    const path_b = 'C:\\Users\\devas\\.cache\\kagglehub\\datasets\\arashnic\\book-recommendation-dataset\\versions\\3\\Books.csv';
+    const path_b = '/home/devashish/.cache/kagglehub/datasets/arashnic/book-recommendation-dataset/versions/3/Books.csv';
     const row_data = fs.readFileSync(path_b, 'utf-8').split('\n').slice(0, 51);
     const keys = row_data.shift().split(',');
     const books = row_data.map(row => {
