@@ -1,0 +1,15 @@
+{
+    "name": "book-recommendation-system",
+    "private": true,
+    "scripts": {
+        "install:all": "npm install && npm install --prefix \"mern deployment\" && npm install --prefix \"mern deployment/my-app\"",
+        "server": "cd \"mern deployment\" && nodemon --watch server.js --watch prediction --ext js,json server.js",
+        "py": "cd \"mern deployment\" && uvicorn python_server:app --reload --reload-exclude \"my-app/*\"",
+        "client": "npm start --prefix \"mern deployment/my-app\"",
+        "dev": "concurrently -n express,python,react -c blue,yellow,green \"npm:server\" \"npm:py\" \"npm:client\""
+    },
+    "devDependencies": {
+        "concurrently": "^10.0.5",
+        "nodemon": "^3.1.14"
+    }
+}

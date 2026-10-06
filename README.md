@@ -39,44 +39,19 @@ Every book is placed on a "map" based on its author and year. Similar books land
 
 ## 5. Setup Process
 
-**mern-stack**
-
-   ```bash
-   npm run dev
-   ```
-
-or
-
-**fastapi**
-
 1. Install the required Python libraries:
-
-   ```bash
-   pip install fastapi uvicorn pydantic kagglehub pandas numpy scipy scikit-learn
-   ```
-
-2. Run the training notebook (`.ipynb`) end-to-end — this downloads the dataset via `kagglehub`, trains the model, and writes `mern deployment/prediction/model.pkl`.
-
-3. The trained model is served through `python_server.py` using FastAPI.
-
-4. Start the API:
-
-   ```bash
-   cd "mern deployment"
-   uvicorn python_server:app --reload
-   ```
-
-   The FastAPI backend runs on `http://127.0.0.1:8000`.
-
-
-   ```bash
-   cd "mern deployment/my-app"
-   npm install
-   npm start
-   ```
-   it runs on `localhost:3000`, calls the FastAPI backend for recommendations.
-
-   In `my-app/src/Redux/Slice.js`, comment out the Node backend port and uncomment/use the Python FastAPI port (`8000`).
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install fastapi uvicorn pydantic kagglehub pandas numpy sentence-transformers faiss-cpu
+npm run install:all
+```
+2. Then, please run:
+```
+python3 "book recomm. system.py"
+```
+3. Start the web-app:
+```bash
+npm run dev
+```
 
 **Production**
 
